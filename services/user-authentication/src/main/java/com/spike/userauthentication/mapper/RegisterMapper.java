@@ -18,4 +18,7 @@ public interface RegisterMapper {
     @Insert("insert into loginInformation(nickname, password, mobile) value(#{nickname}, #{password}, #{mobile})")
     Boolean InsertUser(String nickname, String password, String mobile);
 
+    @Select("select id from loginInformation where mobile = #{mobile}")
+    Integer findId(String mobile);
+
 }

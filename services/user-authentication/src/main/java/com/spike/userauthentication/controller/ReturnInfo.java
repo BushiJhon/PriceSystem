@@ -35,4 +35,6 @@ class Message{
     public static final String REPEATEDMOBILE = "电话号码已经存在";
     public static final String REGISTERFAILED = "注册失败，请重试";
     public static final String REPEATEDNICKNAMEANDMOBILE = "昵称与电话号码已经存在";
+
+    public static final String NONETOKEN = "未生成令牌";
 }

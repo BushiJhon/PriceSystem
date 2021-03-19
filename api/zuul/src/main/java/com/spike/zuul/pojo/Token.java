@@ -1,9 +1,10 @@
 package com.spike.zuul.pojo;
 
-import com.auth0.jwt.JWT;
-import com.auth0.jwt.algorithms.Algorithm;
+        import com.auth0.jwt.JWT;
+        import com.auth0.jwt.JWTVerifier;
+        import com.auth0.jwt.algorithms.Algorithm;
 
-import java.io.UnsupportedEncodingException;
+        import java.io.UnsupportedEncodingException;
 
 public class Token {
     private static String SECRET = "secret";
@@ -20,7 +21,8 @@ public class Token {
     public static Boolean verify(String token){
 
         try{
-            JWT.require(Algorithm.HMAC256(SECRET)).build();
+            JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(SECRET)).build();
+            jwtVerifier.verify(token);
             return true;
         }catch(UnsupportedEncodingException exception){
             return false;

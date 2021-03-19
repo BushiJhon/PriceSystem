@@ -16,7 +16,7 @@ public class LoginController {
     private Token token = Token.getInstance();
 
     //根据昵称登录
-    @RequestMapping(value = "/user/loginByNickname", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/login/nickname", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
     public ReturnInfo loginByNickname(@RequestBody User user){
         User findUser = loginMapper.selectByNickName(user.getNickname(), user.getPassword());
 
@@ -32,7 +32,7 @@ public class LoginController {
     }
 
     //根据电话登录
-    @RequestMapping(value = "/user/loginByMobile", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    @RequestMapping(value = "/login/mobile", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
     public ReturnInfo loginByMobile(@RequestBody User user){
         User findUser = loginMapper.selectByMobile(user.getMobile(), user.getPassword());
 

@@ -1,16 +1,32 @@
 package com.spike.userinformationmanagement.pojo;
 
+import com.auth0.jwt.JWT;
+import com.auth0.jwt.JWTVerifier;
+import com.auth0.jwt.algorithms.Algorithm;
+import com.auth0.jwt.interfaces.DecodedJWT;
+
+import java.io.UnsupportedEncodingException;
+
 public class Token {
-    private String token;
-    private Integer id;
+    private static String SECRET = "secret";
+    private static JWTVerifier jwtVerifier = null;
 
-    public void setToken(String token) {
-        this.token = token;
+    public static JWTVerifier getJWTVerifier() {
+        if (jwtVerifier == null) {
+            try {
+                JWTVerifier jwtVerifier = JWT.require(Algorithm.HMAC256(SECRET)).build();
+                return jwtVerifier;
+            } catch (UnsupportedEncodingException exception) {
+
+            }
+        }
+
+        return jwtVerifier;
     }
 
-
-    public Integer getId() {
-        return new Integer(token);
+    public static Integer getId(String token){
+        DecodedJWT decodedJWT = getJWTVerifier().verify(token);
+        System.out.println(decodedJWT.getClaim("id").asInt());
+        return decodedJWT.getClaim("id").asInt();
     }
-
 }

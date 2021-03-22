@@ -7,7 +7,6 @@ public class User {
     private String industry;    //所在行业
     private String company;     //公司
     private String introduction;//简介
-    private String avatar;      //头像
 
     public void setId(Integer id) {
         this.id = id;
@@ -31,10 +30,6 @@ public class User {
 
     public void setIntroduction(String introduction) {
         this.introduction = introduction;
-    }
-
-    public void setAvatar(String avatar) {
-        this.avatar = avatar;
     }
 
     public Integer getId() {
@@ -61,7 +56,4 @@ public class User {
         return introduction;
     }
 
-    public String getAvatar() {
-        return avatar;
-    }
 }

@@ -15,3 +15,9 @@ zuul:
     user-information-management:
       service-id: user-information-management
       path: /information/**
+    post-write:
+      service-id: post-write
+      path: /publish/**
+    post-comment:
+      service-id: post-comment
+      path: /comment/**

@@ -15,8 +15,8 @@ import java.util.Set;
 public class PreRequestAuthFilter extends ZuulFilter {
     private static Set<String> authenticationURIs = new HashSet<>();
     static {
-        authenticationURIs.add("/authentication/user/loginByMobile");
-        authenticationURIs.add("/authentication/user/loginByNickname");
+        authenticationURIs.add("/authentication/login/mobile");
+        authenticationURIs.add("/authentication/login/nickname");
     }
 
     @Override

@@ -1,4 +1,4 @@
-package controller;
+package com.spike.postwrite.controller;
 
 import com.spike.postwrite.mapper.PostMapper;
 import com.spike.postwrite.pojo.Token;
@@ -14,7 +14,7 @@ public class PostWriteController {
     @RequestMapping(value = "/post/write", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
     public Boolean writePost(@RequestHeader(value = "ps-token") String token, @RequestBody Post post){
         Integer id = Token.getId(token);
-        postMapper.insertPost(post.getIssueDate(), post.getProvince(), post.getCity(), post.getTitle(), post.getContent(), post.getUid());
+        postMapper.insertPost(post.getIssueDate(), post.getProvince(), post.getCity(), post.getTitle(), post.getContent(), id);
         return true;
     }
 }

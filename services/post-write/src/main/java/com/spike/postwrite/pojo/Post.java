@@ -1,22 +1,21 @@
 package com.spike.postwrite.pojo;
 
-import java.util.Date;
+import java.sql.Timestamp;
 
 public class Post {
     private Integer pid;
-    private Date issueDate;
+    private Timestamp issueDate;
     private String province;
     private String city;
     private String title;
     private String content;
     private Integer uid;
-    private String nickname;
 
     public void setPid(Integer pid) {
         this.pid = pid;
     }
 
-    public void setIssueDate(Date issueDate) {
+    public void setIssueDate(Timestamp issueDate) {
         this.issueDate = issueDate;
     }
 
@@ -40,15 +39,11 @@ public class Post {
         this.uid = uid;
     }
 
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
-    }
-
     public Integer getPid() {
         return pid;
     }
 
-    public Date getIssueDate() {
+    public Timestamp getIssueDate() {
         return issueDate;
     }
 
@@ -70,9 +65,5 @@ public class Post {
 
     public Integer getUid() {
         return uid;
-    }
-
-    public String getNickname() {
-        return nickname;
     }
 }

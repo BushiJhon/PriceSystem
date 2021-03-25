@@ -1,0 +1,136 @@
+#Header{
+    height: 64px;
+    background-color: #00BFA6;
+}
+
+#Content{
+    margin: 0;
+    padding: 0;    
+}
+
+#Content-Header{
+    height: 80px;
+    background-color: #00BFA6;
+    color: #f6f9fa;
+    text-align: center;
+    font-size: 38px;
+}
+
+#Content-Title{
+    height: 28px;
+    width: 980px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 68px;
+    margin-top: 20px;
+    border-bottom: 3px solid #ddd;
+}
+
+#login-title{
+    line-height: 56px;
+    height: 56px;
+    text-align: center;
+    font-size: 38px;
+    margin: auto;
+    background: white;
+}
+
+#Content-Content{
+    height: 310px;
+    width: 980px;
+    margin: auto;
+}
+
+#login-picture{
+    float: left;
+}
+
+#line{
+    float: left;
+    height: 300px;
+    border-right: 3px solid #ddd;
+    margin-left: 10px;
+}
+
+#login-style{
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#nickname{
+    color: #00BFA6;
+    cursor: pointer;
+    margin-right: 20px;
+    font-size: 14px;
+}
+
+#mobile{
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#login-card{
+    float: left;
+    padding-left: 45px;
+}
+
+#btn-box{
+    display: flex;
+    align-content: center;
+    justify-content: space-between; 
+}
+
+#btn-login{
+    display: inline-block;
+    height: 36px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 184px;
+    line-height: 38px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+
+    border: 1px solid #00a38d;
+    color: #fff;
+    background-color: #00BFA6;
+}
+
+#btn-register{
+    display: inline-block;
+    height: 36px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    width: 184px;
+    line-height: 38px;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#logo{
+    height: 300px;
+}
+
+#Footer{
+    background-color: #f6f9fa;
+    margin-top: 30px;
+    padding-top: 30px;
+    height: 308px;
+}
+
+#introduction{
+    text-align: center;
+}
+
+#link{
+    text-decoration: none;
+    color: #999;
+    font-size: 14px;
+}
+
+#qq{
+    margin-top: 14px;
+    color: #999;
+    font-size: 14px;
+}

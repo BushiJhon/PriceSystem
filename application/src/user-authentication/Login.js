@@ -51,7 +51,7 @@ class Login extends Component{
     login(){
         let url;
         if(this.state.isNickname){
-            url = "http://localhost:8050/authentication/nickname";
+            url = "/api";
 
             axios.post(url, {
                 "nickname": this.state.nickname,

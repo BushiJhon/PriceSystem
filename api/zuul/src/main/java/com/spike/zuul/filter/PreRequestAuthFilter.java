@@ -38,6 +38,10 @@ public class PreRequestAuthFilter extends ZuulFilter {
     public Object run() throws ZuulException{
         RequestContext requestContext = RequestContext.getCurrentContext();
         HttpServletRequest httpServletRequest = requestContext.getRequest();
+
+        System.out.println(httpServletRequest.getRequestURL());
+        System.out.println(httpServletRequest.getRequestURI());
+
         if(authenticationURIs.contains(httpServletRequest.getRequestURI())){
             return null;
         }

@@ -6,7 +6,7 @@ module.exports = function(app) {
         secure: false,
         changeOrigin: true,
         pathRewrite: {
-        "/api": "/authentication/login/nickname"
+        "^/api": ''
     },
     // cookieDomainRewrite: "http://localhost:3000"
 }));

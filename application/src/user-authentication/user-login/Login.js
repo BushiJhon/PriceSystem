@@ -21,27 +21,44 @@ class Login extends Component{
         this.login = this.login.bind(this);
 
         this.setNickname = this.setNickname.bind(this);
+        this.setMobile = this.setMobile.bind(this);
         this.setPassword = this.setPassword.bind(this);
+
+        this.clear = this.clear.bind(this);
+    }
+
+    clear(){
+        this.setState({nickname: ""});
+        this.setState({mobile: ""});
+        this.setState({password: ""});
     }
 
     loginByNickname(){
         this.setState({isNickname: true});
-        var nickname = document.getElementById("nickname");
+        let nickname = document.getElementById("nickname");
         nickname.style.color = "#00BFA6";
-        var mobile = document.getElementById("mobile");
+        let mobile = document.getElementById("mobile");
         mobile.style.color = "#555";
+
+        this.clear();
     }
 
     loginByMobile(){
         this.setState({isNickname: false});
-        var mobile = document.getElementById("mobile");
+        let mobile = document.getElementById("mobile");
         mobile.style.color = "#00BFA6";
-        var nickname = document.getElementById("nickname");
+        let nickname = document.getElementById("nickname");
         nickname.style.color = "#555";
+
+        this.clear();
     }
 
     setNickname(value){
         this.setState({nickname: value});
+    }
+
+    setMobile(value){
+        this.setState({mobile: value});
     }
 
     setPassword(value){
@@ -51,23 +68,36 @@ class Login extends Component{
     login(){
         let url;
         if(this.state.isNickname){
-            url = "/api";
+            if(this.state.nickname === ""){
+                alert("请填写用户昵称");
+            }else if(this.state.password === ""){
+                alert("请填写密码");
+            }else{
+                url = "/api/authentication/login/nickname";
 
-            axios.post(url, {
-                "nickname": this.state.nickname,
-                "password": this.state.password
-            }).then(
-                (res)=>{console.log(res)}
-            )
+                axios.post(url, {
+                    "nickname": this.state.nickname,
+                    "password": this.state.password
+                }).then(
+                    (res)=>{console.log(res.data)}
+                )
+            }
+
         }else{
-            url = "http://localhost:8050/authentication/mobile";
+            if(this.state.mobile === ""){
+                alert("请输入电话号码");
+            }else if(this.state.password === ""){
+                alert("请输入密码");
+            }else{
+                url = "/api/authentication/login/mobile";
 
-            axios.post(url, {
-                "mobile": this.state.mobile,
-                "password": this.state.password
-            }).then(
-                (res)=>{console.log(res)}
-            )
+                axios.post(url, {
+                    "mobile": this.state.mobile,
+                    "password": this.state.password
+                }).then(
+                    (res)=>{console.log(res.data)}
+                )
+            }
         }
 
     }
@@ -79,7 +109,7 @@ class Login extends Component{
         if(isNickname){
             form = <NicknameCard setNickname={this.setNickname} setPassword={this.setPassword}/>;
         }else{
-            form = <MobileCard/>;
+            form = <MobileCard setMobile={this.setMobile} setPassword={this.setPassword}/>;
         }
         return (
             <Layout>

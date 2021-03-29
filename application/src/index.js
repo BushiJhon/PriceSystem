@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Login from './user-authentication/Login'
+// import Login from './user-authentication/user-login/Login';
+import Register from './user-authentication/user-register/Register'
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Login />
+    <Register />
   </React.StrictMode>,
   document.getElementById('root')
 );

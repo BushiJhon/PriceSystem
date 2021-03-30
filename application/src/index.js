@@ -1,13 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import Login from './user-authentication/user-login/Login';
-import Register from './user-authentication/user-register/Register'
+import Routes from './Routes';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Register />
+    <Routes/>
   </React.StrictMode>,
   document.getElementById('root')
 );

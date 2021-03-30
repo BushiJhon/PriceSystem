@@ -17,6 +17,7 @@ public class PreRequestAuthFilter extends ZuulFilter {
     static {
         authenticationURIs.add("/authentication/login/mobile");
         authenticationURIs.add("/authentication/login/nickname");
+        authenticationURIs.add("/authentication/user/register");
     }
 
     @Override

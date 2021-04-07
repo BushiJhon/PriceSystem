@@ -16,9 +16,9 @@ public interface RegisterMapper {
     List<User> findUser(String nickname, String mobile);
 
     @Insert("insert into certification(nickname, password, mobile) value(#{nickname}, #{password}, #{mobile})")
-    Boolean InsertUser(String nickname, String password, String mobile);
+    Boolean insertUser(String nickname, String password, String mobile);
 
     @Select("select uid from certification where mobile = #{mobile}")
-    Integer findUId(String mobile);
+    Integer findUid(String mobile);
 
 }

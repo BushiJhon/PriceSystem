@@ -44,8 +44,8 @@ public class RegisterController {
         }
 
         try{
-            this.registerMapper.InsertUser(user.getNickname(), user.getPassword(), user.getMobile());
-            Integer uid = registerMapper.findUId(user.getMobile());
+            this.registerMapper.insertUser(user.getNickname(), user.getPassword(), user.getMobile());
+            Integer uid = registerMapper.findUid(user.getMobile());
             return new ReturnInfo(Message.REGISTERSUCCESS, token.createToken(uid));
         }catch (UnsupportedEncodingException exception){
             return new ReturnInfo(Message.REGISTERFAILED, Message.NONETOKEN);

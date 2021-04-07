@@ -6,7 +6,7 @@ public class User {
     private String password;
     private String mobile;
 
-    public void setUId(Integer uid) {
+    public void setUid(Integer uid) {
         this.uid = uid;
     }
 
@@ -22,7 +22,7 @@ public class User {
         this.mobile = mobile;
     }
 
-    public Integer getUId() {
+    public Integer getUid() {
         return uid;
     }
 

@@ -8,11 +8,11 @@ class InformationComplete extends Component{
         super(props);
 
         this.state = {
-            "province": "",
-            "city": "",
-            "company": "",
-            "introduction": "",
-            "industry": ""
+            province: "",
+            city: "",
+            company: "",
+            introduction: "",
+            industry: ""
         }
 
         this.changeBorder = this.changeBorder.bind(this);
@@ -32,7 +32,7 @@ class InformationComplete extends Component{
             method: 'get',
             url: url,
             headers: {
-                "ps-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImV4cCI6MTYxNzI2MzkxNSwiaWF0IjoxNjE3MTc3NTE1fQ.4B_6kOlMwKOAmxUXOk9nuxXzCCMGZOa8qwzT9-WqQqM"
+                "ps-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImV4cCI6MTYxNzg1NDAzNiwiaWF0IjoxNjE3NzY3NjM2fQ.n9qUlQqsJeacou4svbBB9seypvOs-09bLpfDa7GBB3k"
             }
         }).then((res)=>{
             this.setState({company: res.data.company});
@@ -97,7 +97,7 @@ class InformationComplete extends Component{
                     "industry": this.state.industry
                 },
                 headers: {
-                    "ps-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTMsImV4cCI6MTYxNzI2MzkxNSwiaWF0IjoxNjE3MTc3NTE1fQ.4B_6kOlMwKOAmxUXOk9nuxXzCCMGZOa8qwzT9-WqQqM"
+                    "ps-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImV4cCI6MTYxNzg1NDAzNiwiaWF0IjoxNjE3NzY3NjM2fQ.n9qUlQqsJeacou4svbBB9seypvOs-09bLpfDa7GBB3k"
                 }
             }).then((res)=>{console.log(res)});
         }

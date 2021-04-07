@@ -11,6 +11,6 @@ import java.util.List;
 @Mapper
 public interface ManagementMapper {
 
-    @Select("select * from post where uid = #{id}")
-    List<Post> listPost(Integer id);
+    @Select("select * from post where uid = #{uid}")
+    List<Post> listPost(Integer uid);
 }

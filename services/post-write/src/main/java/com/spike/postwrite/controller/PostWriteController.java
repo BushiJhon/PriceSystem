@@ -13,8 +13,8 @@ public class PostWriteController {
 
     @RequestMapping(value = "/post/write", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
     public Boolean writePost(@RequestHeader(value = "ps-token") String token, @RequestBody Post post){
-        Integer id = Token.getId(token);
-        postMapper.insertPost(post.getIssueDate(), post.getProvince(), post.getCity(), post.getTitle(), post.getContent(), id);
+        Integer uid = Token.getUid(token);
+        postMapper.insertPost(post.getIssueDate(), post.getProvince(), post.getCity(), post.getIndustry(), post.getTitle(), post.getContent(), uid);
         return true;
     }
 }

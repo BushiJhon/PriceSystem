@@ -19,9 +19,9 @@ public class PostManagementController {
 
     @RequestMapping(value = "/post/list", produces = "application/json", method = RequestMethod.GET)
     public List<Post> listPost(@RequestHeader(value = "ps-token") String token){
-        Integer id = Token.getId(token);
+        Integer uid = Token.getUid(token);
 
-        List<Post> list = managementMapper.listPost(id);
+        List<Post> list = managementMapper.listPost(uid);
         return list;
     }
 }

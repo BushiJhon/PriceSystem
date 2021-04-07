@@ -7,6 +7,7 @@ public class Post {
     private Timestamp issueDate;
     private String province;
     private String city;
+    private String industry;
     private String title;
     private String content;
     private Integer uid;
@@ -25,6 +26,10 @@ public class Post {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public void setIndustry(String industry) {
+        this.industry = industry;
     }
 
     public void setTitle(String title) {
@@ -53,6 +58,10 @@ public class Post {
 
     public String getCity() {
         return city;
+    }
+
+    public String getIndustry() {
+        return industry;
     }
 
     public String getTitle() {

@@ -22,7 +22,7 @@ public class LoginController {
 
         if(findUser != null){
             try{
-                return new ReturnInfo(Message.LOGINSUCCESS, token.createToken(findUser.getId()));
+                return new ReturnInfo(Message.LOGINSUCCESS, token.createToken(findUser.getUId()));
             }catch(UnsupportedEncodingException exception){
                 return new ReturnInfo(Message.LOGINFAILED, Message.NONETOKEN);
             }
@@ -38,7 +38,7 @@ public class LoginController {
 
         if(findUser != null){
             try{
-                return new ReturnInfo(Message.LOGINSUCCESS, token.createToken(findUser.getId()));
+                return new ReturnInfo(Message.LOGINSUCCESS, token.createToken(findUser.getUId()));
             }catch(UnsupportedEncodingException exception){
                 return new ReturnInfo(Message.LOGINFAILED, Message.NONETOKEN);
             }

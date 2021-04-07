@@ -9,9 +9,9 @@ import org.springframework.stereotype.Component;
 @Mapper
 public interface LoginMapper {
 
-    @Select("select * from loginInformation where nickname = #{nickname} and password = #{password}")
+    @Select("select * from certification where nickname = #{nickname} and password = #{password}")
     User selectByNickName(String nickname, String password);
 
-    @Select("select * from loginInformation where mobile = #{mobile} and password = #{password}")
+    @Select("select * from certification where mobile = #{mobile} and password = #{password}")
     User selectByMobile(String mobile, String password);
 }

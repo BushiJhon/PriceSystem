@@ -22,7 +22,7 @@ public class Token {
         return instance;
     }
 
-    public String createToken(Integer id) throws UnsupportedEncodingException {
+    public String createToken(Integer uid) throws UnsupportedEncodingException {
         Date now = new Date();
         Date expireDate = new Date(now.getTime() + EXPIRE);
 
@@ -32,7 +32,7 @@ public class Token {
 
         return JWT.create()
                 .withHeader(header)
-                .withClaim("id", id)
+                .withClaim("uid", uid)
                 .withIssuedAt(now)
                 .withExpiresAt(expireDate)
                 .sign(Algorithm.HMAC256(SECRET));

@@ -1,13 +1,13 @@
 package com.spike.userauthentication.pojo;
 
 public class User {
-    private Integer id;
+    private Integer uid;
     private String nickname;
     private String password;
     private String mobile;
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUId(Integer uid) {
+        this.uid = uid;
     }
 
     public void setNickname(String nickname) {
@@ -22,8 +22,8 @@ public class User {
         this.mobile = mobile;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getUId() {
+        return uid;
     }
 
     public String getNickname() {

@@ -8,16 +8,16 @@ import org.springframework.web.bind.annotation.*;
 public class AvatarController {
     @RequestMapping(value = "/avatar/upload", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
     public Boolean uploadAvatar(@RequestHeader(value = "ps-token") String token, @RequestBody Avatar avatar){
-        Integer id = Token.getId(token);
-        Boolean result = avatar.saveAvatar(id);
+        Integer uid = Token.getUid(token);
+        Boolean result = avatar.saveAvatar(uid);
         return result;
     }
 
     @RequestMapping(value = "/avatar/download", produces = "application/json", method = RequestMethod.GET)
     public String downloadAvatar(@RequestHeader(value = "ps-token") String token){
-        Integer id = Token.getId(token);
+        Integer uid = Token.getUid(token);
         Avatar avatar = new Avatar();
-        if(avatar.findAvatar(id)){
+        if(avatar.findAvatar(uid)){
             return avatar.getAvatarBase64();
         }
         return "";

@@ -10,12 +10,12 @@ import org.springframework.stereotype.Component;
 @Component
 @Mapper
 public interface InformationMapper {
-    @Select("select * from user where id = #{id}")
-    User selectUser(Integer id);
+    @Select("select * from user where uid = #{uid}")
+    User selectUser(Integer uid);
 
-    @Insert("insert into user(id, province, city, company, introduction, industry) value(#{id}, #{province}, #{city}, #{company}, #{introduction}, #{industry})")
-    Boolean insertUser(Integer id, String province, String city, String company, String introduction, String industry);
+    @Insert("insert into user(uid, province, city, company, introduction, industry) value(#{uid}, #{province}, #{city}, #{company}, #{introduction}, #{industry})")
+    Boolean insertUser(Integer uid, String province, String city, String company, String introduction, String industry);
 
-    @Update("update user set province = #{province}, city = #{city}, company = #{company}, introduction = #{introduction}, industry = #{industry} where id = #{id}")
-    Boolean updateUser(String province, String city, String company, String introduction, String industry, Integer id);
+    @Update("update user set province = #{province}, city = #{city}, company = #{company}, introduction = #{introduction}, industry = #{industry} where uid = #{uid}")
+    Boolean updateUser(String province, String city, String company, String introduction, String industry, Integer uid);
 }

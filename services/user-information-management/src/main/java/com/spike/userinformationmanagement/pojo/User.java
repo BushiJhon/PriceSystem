@@ -1,15 +1,15 @@
 package com.spike.userinformationmanagement.pojo;
 
 public class User {
-    private Integer id;
+    private Integer uid;
     private String province;    //省份
     private String city;        //城市
     private String industry;    //所在行业
     private String company;     //公司
     private String introduction;//简介
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUid(Integer uid) {
+        this.uid = uid;
     }
 
     public void setProvince(String province) {
@@ -32,8 +32,8 @@ public class User {
         this.introduction = introduction;
     }
 
-    public Integer getId() {
-        return id;
+    public Integer getUid() {
+        return uid;
     }
 
     public String getProvince() {

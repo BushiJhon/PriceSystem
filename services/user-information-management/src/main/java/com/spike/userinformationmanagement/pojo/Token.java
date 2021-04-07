@@ -24,9 +24,9 @@ public class Token {
         return jwtVerifier;
     }
 
-    public static Integer getId(String token){
+    public static Integer getUid(String token){
         DecodedJWT decodedJWT = getJWTVerifier().verify(token);
-        System.out.println(decodedJWT.getClaim("id").asInt());
-        return decodedJWT.getClaim("id").asInt();
+        System.out.println(decodedJWT.getClaim("uid").asInt());
+        return decodedJWT.getClaim("uid").asInt();
     }
 }

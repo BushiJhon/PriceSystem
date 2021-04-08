@@ -1,0 +1,17 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: user-recommend
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/priceCommunicationSystem?characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://localhost:8040/eureka/
+

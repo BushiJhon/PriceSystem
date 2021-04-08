@@ -22,10 +22,18 @@ public class RecommendController {
     private RecommendMapper recommendMapper;
 
     @RequestMapping(value = "/post/recommend", produces = "application/json", method = RequestMethod.GET)
-    public List<Post> writePost(@RequestHeader(value = "ps-token") String token){
+    public List<Post> recommendPost(@RequestHeader(value = "ps-token") String token){
         Integer uid = Token.getUid(token);
         User user = userMapper.retrieveUser(uid);
         List<Post> list = recommendMapper.selectPost(user.getIndustry());
         return list;
     }
+
+//    @RequestMapping(value = "/user/recommend", produces = "application/json", method = RequestMethod.GET)
+//    public List<User> recommendUser(@RequestHeader(value = "ps-token") String token){
+//        Integer uid = Token.getUid(token);
+//        User user = userMapper.retrieveUser(uid);
+//        List<User> list = recommendMapper.selectUser(user.getIndustry());
+//        return list;
+//    }
 }

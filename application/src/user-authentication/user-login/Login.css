@@ -1,6 +1,6 @@
 #Header{
     height: 64px;
-    background-color: #00BFA6;
+    background-color: #00a38d;
 }
 
 #Content{
@@ -14,6 +14,24 @@
     color: #f6f9fa;
     text-align: center;
     font-size: 38px;
+}
+
+#mini-header{
+    padding: 10px 24px;
+    margin: 0 auto;
+    line-height: 30px;
+    height: 36px;
+    background-color: #115b54;
+}
+
+.link{
+    margin: 9px;
+    font-size: 18px;
+}
+
+.head-link{
+    color: #fff;
+    text-decoration: none;
 }
 
 #Content-Title{

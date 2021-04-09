@@ -69,7 +69,14 @@ class Register extends Component{
         const {Header, Content, Footer} = Layout;
         return (
             <Layout>
-                <Header id={"Header"}>Header</Header>
+                <Header id={"Header"}>
+                    <Header id="Header">
+                        <div id={"mini-header"}>
+                            <span className={"link"}><a className={"head-link"} href={"login"}>登录</a></span>
+                            <span className={"link"}><a className={"head-link"} href={"register"}>注册</a></span>
+                        </div>
+                    </Header>
+                </Header>
                 <Content id={"Content"}>
                     <div id={"Content-Header"}>基于微服务架构的材料报价系统</div>
                     <div id={"Content-Title"}><span id={"login-title"}>注册</span></div>

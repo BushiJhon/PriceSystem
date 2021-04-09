@@ -26,6 +26,14 @@ class InformationComplete extends Component{
         this.setIntroduction = this.setIntroduction.bind(this);
     }
 
+    componentDidMount() {
+        let localStorage = window.localStorage;
+        if(localStorage.length === 0 || localStorage.getItem("ps-token") === undefined){
+            alert("请先注册!");
+            window.location.href = "/";
+        }
+    }
+
     changeBorder(event){
         let input = document.getElementById(event.target.attributes.id.value);
         input.style.borderColor = "#00BFA6";
@@ -68,6 +76,8 @@ class InformationComplete extends Component{
         }else if(this.state.introduction === ""){
             alert("请输入简介");
         }else{
+            let localStorage = window.localStorage;
+            let token = localStorage.getItem("ps-token");
             let url = "/api/information/user/complete";
             axios({
                 method: 'post',
@@ -80,7 +90,7 @@ class InformationComplete extends Component{
                     "industry": this.state.industry
                 },
                 headers: {
-                    "ps-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImV4cCI6MTYxNzg1NDAzNiwiaWF0IjoxNjE3NzY3NjM2fQ.n9qUlQqsJeacou4svbBB9seypvOs-09bLpfDa7GBB3k"
+                    "ps-token": token
                 }
             }).then((res)=>{console.log(res)});
         }

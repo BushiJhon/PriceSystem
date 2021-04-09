@@ -57,7 +57,11 @@ class Register extends Component{
                 "nickname": this.state.nickname,
                 "mobile": this.state.mobile,
                 "password": this.state.password
-            }).then((res)=>{console.log(res)})
+            }).then((res)=>{
+                let localStorage = window.localStorage;
+                localStorage.setItem("ps-token", res.data.token);
+                window.location.href = "complete";
+            })
         }
     }
 

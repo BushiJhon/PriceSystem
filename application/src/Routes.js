@@ -8,6 +8,7 @@ import Complete from './user-information-management/user-complete/InformationCom
 import Modify from './user-information-management/user-modify/InformationModify';
 import Write from './post-write/post-write/Write';
 import Management from './post-write/post-management/Management';
+import Recommend from "./recommend/Recommend";
 
 
 const history = browserHistory;
@@ -21,6 +22,7 @@ const Routes = () => (
             <Route path={"modify"} component={Modify}/>
             <Route path={"write"} component={Write}/>
             <Route path={"management"} component={Management}/>
+            <Route path={"recommend"} component={Recommend}></Route>
         </Route>
     </Router>
 );

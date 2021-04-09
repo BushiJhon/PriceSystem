@@ -79,8 +79,11 @@ class Login extends Component{
                     "nickname": this.state.nickname,
                     "password": this.state.password
                 }).then(
-                    (res)=>{console.log(res.data)}
-                )
+                    (res)=>{
+			            let localStorage = window.localStorage;
+                        localStorage.setItem("ps-token", res.data.token);
+                        window.location.href = "recommend";
+		            })
             }
 
         }else{
@@ -95,8 +98,11 @@ class Login extends Component{
                     "mobile": this.state.mobile,
                     "password": this.state.password
                 }).then(
-                    (res)=>{console.log(res.data)}
-                )
+                    (res)=>{
+                        let localStorage = window.localStorage;
+                        localStorage.setItem("ps-token", res.data.token);
+                        window.location.href = "recommend";
+                    })
             }
         }
 
@@ -128,7 +134,7 @@ class Login extends Component{
                             {form}
                             <div id="btn-box">
                                 <a id="btn-login" onClick={this.login}>登录</a>
-                                <a id="btn-register">注册</a>
+                                <a id="btn-register" href={"register"}>注册</a>
                             </div>
                         </div>
                     </div>

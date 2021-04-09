@@ -10,14 +10,14 @@ class Management extends Component{
         this.state = {
             posts: []
         }
-	
+
 	this.getPosts = this.getPosts.bind(this);
     }
-    
+
     componentDidMount() {
         this.getPosts();
     }
-    
+
     getPosts(){
 	let url = "/api/publish/post/list";
 	axios({
@@ -27,13 +27,13 @@ class Management extends Component{
                 "ps-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImV4cCI6MTYxNzg1NDAzNiwiaWF0IjoxNjE3NzY3NjM2fQ.n9qUlQqsJeacou4svbBB9seypvOs-09bLpfDa7GBB3k"
             }
         }).then((res)=>{this.setState({posts: res.data});
-			console.log(res.data);});    
+			console.log(res.data);});
     }
 
     render(){
         const {Header, Content, Footer} = Layout;
-	const posts = this.state.posts;
-	
+	    const posts = this.state.posts;
+
         return (
             <Layout>
                 <Header id={"Header"}>Header</Header>

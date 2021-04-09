@@ -26,6 +26,10 @@ class Recommend extends Component{
                             <span className={"link"}><a className={"head-link"} href={"login"}>登录</a></span>
                             <span className={"link"}><a className={"head-link"} href={"register"}>注册</a></span>
                             <span className={"link"}><input /><button>搜索</button></span>
+                            <span className={"link"}><a className={"head-link"} href={"write"}>创作中心</a></span>
+                            <span className={"link"}><a className={"head-link"} href={"management"}>帖子中心</a></span>
+                            <span className={"link"}><a className={"head-link"} href={"login"}>个人中心</a></span>
+                            <span className={"link"}><a className={"head-link"} style={{float: "right"}} href={"register"}>登出</a></span>
                         </div>
 
                     </Header>

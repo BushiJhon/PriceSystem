@@ -1,5 +1,3 @@
-/*@import '~antd/dist/antd.css';*/
-
 #Header{
     height: 64px;
     background-color: #00BFA6;
@@ -56,7 +54,7 @@
 }
 
 #Content-Content{
-    height: 310px;
+    height: 680px;
     width: 980px;
     margin: 0 auto;
     padding: 40px 0;
@@ -104,7 +102,7 @@
 
 #Footer{
     background-color: #f6f9fa;
-    margin-top: 30px;
+    margin-top: 120px;
     padding-top: 30px;
     height: 308px;
 }

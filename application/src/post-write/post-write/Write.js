@@ -93,7 +93,11 @@ class Write extends Component{
         const {Header, Content, Footer} = Layout;
         return (
             <Layout>
-                <Header id={"Header"}>Header</Header>
+                <Header id={"Header"}>
+                    <div id={"mini-header"}>
+                        <span className={"link"}><a className={"head-link"} href={"recommend"}>首页</a></span>
+                    </div>
+                </Header>
                 <Content id={"Content"}>
                     <div id={"Content-Header"}>基于微服务架构的材料报价系统</div>
                     <div id={"Content-Title"}><span id={"login-title"}>发表价格帖子</span></div>

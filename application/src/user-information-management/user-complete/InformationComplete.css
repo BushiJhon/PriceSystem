@@ -3,6 +3,24 @@
     background-color: #00BFA6;
 }
 
+#mini-header{
+    padding: 10px 24px;
+    margin: 0 auto;
+    line-height: 30px;
+    height: 36px;
+    background-color: #115b54;
+}
+
+.link{
+    margin: 9px;
+    font-size: 18px;
+}
+
+.head-link{
+    color: #fff;
+    text-decoration: none;
+}
+
 #Content{
     margin: 0;
     padding: 0;

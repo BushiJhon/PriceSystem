@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Layout, Input} from "antd";
 import './Recommend.css';
 
+import Tab from './Tab/Tab';
+
 class Recommend extends Component{
     constructor(props){
         super(props);
@@ -17,7 +19,6 @@ class Recommend extends Component{
 
     render(){
         const {Header, Content, Footer} = Layout;
-        const {Search} = Input;
         return (
             <Layout>
                 <Header id={"Header"}>
@@ -29,16 +30,18 @@ class Recommend extends Component{
                             <span className={"link"}><a className={"head-link"} href={"write"}>创作中心</a></span>
                             <span className={"link"}><a className={"head-link"} href={"management"}>帖子中心</a></span>
                             <span className={"link"}><a className={"head-link"} href={"login"}>个人中心</a></span>
-                            <span className={"link"}><a className={"head-link"} style={{float: "right"}} href={"register"}>登出</a></span>
+                            <span className={"link"}><a className={"head-link"} style={{float: "right"}} href={"login"}>登出</a></span>
                         </div>
 
                     </Header>
                 </Header>
                 <Content id={"Content"}>
                     <div id={"Content-Header"}>基于微服务架构的材料报价系统</div>
-                    <div id={"Content-Title"}><span id={"login-title"}>发布的帖子</span></div>
                     <div id={"Content-Content"}>
-                        recommend
+                        <Tab/>
+                        <Tab/>
+                        <Tab/>
+                        <Tab/>
                         {/*<List*/}
                         {/*    itemLayout={"vertical"}*/}
                         {/*    dataSource={posts}*/}

@@ -1,0 +1,36 @@
+#tab{
+    width: 680px;
+    height: 180px;
+    border: 2px solid #999;
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+#title{
+    height: 25px;
+    width: 200px;
+    font-size: 22px;
+    margin: auto;
+    text-align: center;
+}
+
+#information{
+    height: 20px;
+    width: 400px;
+    margin: auto;
+}
+
+.tab-span{
+    height: 20px;
+    width: 80px;
+    margin: 0 20px;
+    color: #999;
+    font-size: 14px;
+}
+
+#content{
+    height: 100px;
+    width: 600px;
+    margin: 5px auto;
+    padding: 15px;
+}

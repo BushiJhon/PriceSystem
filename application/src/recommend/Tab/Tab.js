@@ -6,26 +6,22 @@ class Tab extends Component{
         super(props);
 
         this.state = {
-            title: "",
-            time: new Date(),
-            industry: "",
-            address: "",
-            author: "",
-            content: ""
+            time: this.props.time,
+            industry: this.props.industry,
+            address: this.props.address,
+            author: "作者"
         }
     }
 
     render() {
         return(
             <div id={"tab"}>
-                <div id={"title"}>title</div>
                 <div id={"information"}>
-                    <span className={"tab-span"} id={"time"}>{"this.state.time"}</span>
-                    <span className={"tab-span"} id={"industry"}>{"this.state.industry"}</span>
-                    <span className={"tab-span"} id={"address"}>{"this.state.address"}</span>
-                    <span className={"tab-span"} id={"author"}>{"this.state.author"}</span>
+                    <span className={"tab-span"} id={"time"}>{this.state.time}</span>
+                    <span className={"tab-span"} id={"industry"}>{this.state.industry}</span>
+                    <span className={"tab-span"} id={"address"}>{this.state.address}</span>
+                    <span className={"tab-span"} id={"author"}>{this.state.author}</span>
                 </div>
-                <div id={"content"}>{this.state.content}</div>
             </div>
         );
     }

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Layout, Input} from "antd";
 import './Recommend.css';
 
-import Tab from './Tab/Tab';
+import Tab from './Tab/Tabs';
 
 class Recommend extends Component{
     constructor(props){
@@ -38,9 +38,6 @@ class Recommend extends Component{
                 <Content id={"Content"}>
                     <div id={"Content-Header"}>基于微服务架构的材料报价系统</div>
                     <div id={"Content-Content"}>
-                        <Tab/>
-                        <Tab/>
-                        <Tab/>
                         <Tab/>
                         {/*<List*/}
                         {/*    itemLayout={"vertical"}*/}

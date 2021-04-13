@@ -9,6 +9,7 @@ import Modify from './user-information-management/user-modify/InformationModify'
 import Write from './post-write/post-write/Write';
 import Management from './post-write/post-management/Management';
 import Recommend from "./recommend/Recommend";
+import Show from './post-write/post-show/Show';
 
 
 const history = browserHistory;
@@ -23,6 +24,7 @@ const Routes = () => (
             <Route path={"write"} component={Write}/>
             <Route path={"management"} component={Management}/>
             <Route path={"recommend"} component={Recommend}></Route>
+            <Route path={"show"} component={Show}></Route>
         </Route>
     </Router>
 );

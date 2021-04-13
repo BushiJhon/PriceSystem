@@ -27,6 +27,14 @@ class Write extends Component{
         this.setContent = this.setContent.bind(this);
     }
 
+    componentDidMount() {
+        let localStorage = window.localStorage;
+        if(localStorage.length === 0 || localStorage.getItem("ps-token") === undefined){
+            alert("请先登录!");
+            window.location.href = "/";
+        }
+    }
+
     changeBorder(event){
         let input = document.getElementById(event.target.attributes.id.value);
         input.style.borderColor = "#00BFA6";
@@ -76,14 +84,14 @@ class Write extends Component{
                 url: url,
                 data: {
                     "issueDate": this.state.issueDate,
-		    "province": this.state.province,
+		            "province": this.state.province,
                     "city": this.state.city,
                     "industry": this.state.industry,
                     "title": this.state.title,
                     "content": this.state.content
                 },
                 headers: {
-                    "ps-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImV4cCI6MTYxNzg1NDAzNiwiaWF0IjoxNjE3NzY3NjM2fQ.n9qUlQqsJeacou4svbBB9seypvOs-09bLpfDa7GBB3k"
+                    "ps-token": window.localStorage.getItem("ps-token")
                 }
             }).then((res)=>{console.log(res)});
         }

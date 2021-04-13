@@ -15,6 +15,12 @@ class Management extends Component{
     }
 
     componentDidMount() {
+        let localStorage = window.localStorage;
+        if(localStorage.length === 0 || localStorage.getItem("ps-token") === undefined){
+            alert("请先登录!");
+            window.location.href = "/";
+        }
+
         this.getPosts();
     }
 
@@ -24,7 +30,7 @@ class Management extends Component{
 	    method: 'get',
             url: url,
             headers: {
-                "ps-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImV4cCI6MTYxNzg1NDAzNiwiaWF0IjoxNjE3NzY3NjM2fQ.n9qUlQqsJeacou4svbBB9seypvOs-09bLpfDa7GBB3k"
+                "ps-token": window.localStorage.getItem("ps-token")
             }
         }).then((res)=>{this.setState({posts: res.data});
 			console.log(res.data);});
@@ -46,15 +52,15 @@ class Management extends Component{
                     <div id={"Content-Title"}><span id={"login-title"}>发布的帖子</span></div>
                     <div id={"Content-Content"}>
                         <List
-			    itemLayout={"vertical"}
-			    dataSource={posts}
-			    renderItem={item => (
-			      <List.Item key={item.title}>
-				<List.Item.Meta
-				  title={item.title}
-				  description={item.content}
-				/>
-			      </List.Item>
+                            itemLayout={"vertical"}
+                            dataSource={posts}
+                            renderItem={item => (
+                              <List.Item key={item.title}>
+                            <List.Item.Meta
+                              title={item.title}
+                              description={item.content}
+                            />
+                              </List.Item>
 			    )}
 			  />
                     </div>

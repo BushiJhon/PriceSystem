@@ -15,6 +15,7 @@ class Show extends Component{
             title: "",
             content: ""
         }
+	
     }
 
     componentDidMount() {
@@ -24,7 +25,25 @@ class Show extends Component{
             window.location.href = "/";
         }
 
-        console.log(this.props.location.state.id)
+        let url = "/api/post-recommend/post/show";
+        axios({
+            method: 'post',
+            url: url,
+            data: {
+                "pid": this.props.location.state.id,
+                },
+            headers: {
+                "ps-token": window.localStorage.getItem("ps-token")
+            }
+        }).then((res)=>{
+		this.setState({issueDate: res.data.issueDate});
+		this.setState({province: res.data.province});
+		this.setState({industry: res.data.industry});
+		this.setState({city: res.data.city});
+		this.setState({title: res.data.title});
+		this.setState({content: res.data.content});
+		
+	});
     }
 
 
@@ -61,10 +80,6 @@ class Show extends Component{
                             <div className={"form-space"}/>
                             <div className={"form-group"}>
                                 <input className={"form-input"} id={"introduction-input"} type={"text"} defaultValue={this.state.content} disabled={true}></input>
-                            </div>
-                            <div className={"form-space"}/>
-                            <div className={"form-group"}>
-                                <button id={"submit-btn"}>删除</button>
                             </div>
                         </div>
                     </div>

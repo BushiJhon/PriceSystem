@@ -27,12 +27,19 @@ class InformationComplete extends Component{
     }
 
     componentWillMount() {
+        let localStorage = window.localStorage;
+        if(localStorage.length === 0 || localStorage.getItem("ps-token") === undefined){
+            alert("请先登录!");
+            window.location.href = "/";
+        }
+
+
         let url = "/api/information/user/show";
         axios({
             method: 'get',
             url: url,
             headers: {
-                "ps-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImV4cCI6MTYxNzg1NDAzNiwiaWF0IjoxNjE3NzY3NjM2fQ.n9qUlQqsJeacou4svbBB9seypvOs-09bLpfDa7GBB3k"
+                "ps-token": localStorage.getItem("ps-token")
             }
         }).then((res)=>{
             this.setState({company: res.data.company});
@@ -107,7 +114,11 @@ class InformationComplete extends Component{
         const {Header, Content, Footer} = Layout;
         return (
             <Layout>
-                <Header id={"Header"}>Header</Header>
+                <Header id={"Header"}>
+                    <div id={"mini-header"}>
+                        <span className={"link"}><a className={"head-link"} href={"recommend"}>首页</a></span>
+                    </div>
+                </Header>
                 <Content id={"Content"}>
                     <div id={"Content-Header"}>基于微服务架构的材料报价系统</div>
                     <div id={"Content-Title"}><span id={"login-title"}>修改用户信息</span></div>

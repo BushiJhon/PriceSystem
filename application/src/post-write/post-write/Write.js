@@ -93,7 +93,10 @@ class Write extends Component{
                 headers: {
                     "ps-token": window.localStorage.getItem("ps-token")
                 }
-            }).then((res)=>{console.log(res)});
+            }).then((res)=>{
+                alert("提交成功!");
+                window.location.href = "recommend";
+            });
         }
     }
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Layout, Input} from "antd";
+import {Layout} from "antd";
 import './Recommend.css';
 
 import Tab from './Tab/Tabs';
@@ -7,6 +7,8 @@ import Tab from './Tab/Tabs';
 class Recommend extends Component{
     constructor(props){
         super(props);
+
+        this.logout = this.logout.bind(this);
     }
 
     componentDidMount() {
@@ -15,6 +17,10 @@ class Recommend extends Component{
             alert("请先登录!");
             window.location.href = "/";
         }
+    }
+
+    logout(){
+        window.localStorage.removeItem("ps-token");
     }
 
     render(){
@@ -29,8 +35,8 @@ class Recommend extends Component{
                             <span className={"link"}><input /><button>搜索</button></span>
                             <span className={"link"}><a className={"head-link"} href={"write"}>创作中心</a></span>
                             <span className={"link"}><a className={"head-link"} href={"management"}>帖子中心</a></span>
-                            <span className={"link"}><a className={"head-link"} href={"login"}>个人中心</a></span>
-                            <span className={"link"}><a className={"head-link"} style={{float: "right"}} href={"login"}>登出</a></span>
+                            <span className={"link"}><a className={"head-link"} href={"modify"}>个人中心</a></span>
+                            <span className={"link"}><a className={"head-link"} style={{float: "right"}} href={"/"} onClick={this.logout}>登出</a></span>
                         </div>
 
                     </Header>
@@ -39,18 +45,6 @@ class Recommend extends Component{
                     <div id={"Content-Header"}>基于微服务架构的材料报价系统</div>
                     <div id={"Content-Content"}>
                         <Tab/>
-                        {/*<List*/}
-                        {/*    itemLayout={"vertical"}*/}
-                        {/*    dataSource={posts}*/}
-                        {/*    renderItem={item => (*/}
-                        {/*        <List.Item key={item.title}>*/}
-                        {/*            <List.Item.Meta*/}
-                        {/*                title={item.title}*/}
-                        {/*                description={item.content}*/}
-                        {/*            />*/}
-                        {/*        </List.Item>*/}
-                        {/*    )}*/}
-                        {/*/>*/}
                     </div>
                 </Content>
                 <Footer id="Footer">

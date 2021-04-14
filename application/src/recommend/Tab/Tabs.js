@@ -55,7 +55,7 @@ class Tabs extends Component{
                     <List.Item>
                         <List.Item.Meta
                             title={<Link to={{pathname: "show",
-                                state:{id: 1}}}>{item.title}</Link>}
+                                state:{id: item.pid}}}>{item.title}</Link>}
                             description={<div><Tab time={item.issueDate} industry={item.industry} address={item.province}></Tab>{item.content}</div>}
                         />
                     </List.Item>

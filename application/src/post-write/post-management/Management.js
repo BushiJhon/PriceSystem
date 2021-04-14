@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Layout, List} from "antd";
 import './Management.css';
 import axios from "axios";
+import {Link} from "react-router";
+import Tab from "../../recommend/Tab/Tab";
 
 class Management extends Component{
     constructor(props){
@@ -52,17 +54,19 @@ class Management extends Component{
                     <div id={"Content-Title"}><span id={"login-title"}>发布的帖子</span></div>
                     <div id={"Content-Content"}>
                         <List
-                            itemLayout={"vertical"}
-                            dataSource={posts}
+                            itemLayout="horizontal"
+                            dataSource={this.state.posts}
                             renderItem={item => (
-                              <List.Item key={item.title}>
-                            <List.Item.Meta
-                              title={item.title}
-                              description={item.content}
-                            />
-                              </List.Item>
-			    )}
-			  />
+                                <List.Item>
+                                    <List.Item.Meta
+                                        title={<Link to={{pathname: "show",
+                                            state:{id: item.pid}}}>{item.title}</Link>}
+                                        description={<div><Tab time={item.issueDate} industry={item.industry} address={item.province}></Tab>{item.content}</div>}
+                                    />
+                                </List.Item>
+                            )}
+                        />
+
                     </div>
                 </Content>
                 <Footer id="Footer">

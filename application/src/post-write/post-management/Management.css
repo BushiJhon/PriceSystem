@@ -22,6 +22,7 @@
 }
 
 #Content{
+    height: 680px;
     margin: 0;
     padding: 0;
 }
@@ -54,7 +55,6 @@
 }
 
 #Content-Content{
-    height: 310px;
     width: 980px;
     margin: 0 auto;
     padding: 40px 0;

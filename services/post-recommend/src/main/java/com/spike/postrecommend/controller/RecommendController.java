@@ -6,10 +6,7 @@ import com.spike.postrecommend.pojo.Post;
 import com.spike.postrecommend.pojo.Token;
 import com.spike.postrecommend.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,15 +22,13 @@ public class RecommendController {
     public List<Post> recommendPost(@RequestHeader(value = "ps-token") String token){
         Integer uid = Token.getUid(token);
         User user = userMapper.retrieveUser(uid);
-        List<Post> list = recommendMapper.selectPost(user.getIndustry());
+        List<Post> list = recommendMapper.selectPosts(user.getIndustry());
         return list;
     }
 
-//    @RequestMapping(value = "/user/recommend", produces = "application/json", method = RequestMethod.GET)
-//    public List<User> recommendUser(@RequestHeader(value = "ps-token") String token){
-//        Integer uid = Token.getUid(token);
-//        User user = userMapper.retrieveUser(uid);
-//        List<User> list = recommendMapper.selectUser(user.getIndustry());
-//        return list;
-//    }
+    @RequestMapping(value = "/post/show", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
+    public Post showPost(@RequestHeader(value = "ps-token") String token, @RequestBody Post post){
+        Post findPost = recommendMapper.selectPost(post.getPid());
+        return findPost;
+    }
 }

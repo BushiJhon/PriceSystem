@@ -6,7 +6,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8040/eureka/
+      defaultZone: http://discovery:8040/eureka/
 zuul:
   routes:
     user-authentication:

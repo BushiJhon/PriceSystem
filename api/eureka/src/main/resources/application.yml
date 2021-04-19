@@ -8,4 +8,4 @@ eureka:
     fetch-registry: false
     register-with-eureka: false
     service-url:
-      defaultZone: http://localhost:8040/eureka/
+      defaultZone: http://discovery:8040/eureka/

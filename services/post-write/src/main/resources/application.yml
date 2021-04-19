@@ -4,13 +4,13 @@ spring:
   application:
     name: post-write
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/priceCommunicationSystem?characterEncoding=UTF-8
+    url: jdbc:mysql://121.40.67.221:3306/priceCommunicationSystem?characterEncoding=UTF-8
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8040/eureka/
+      defaultZone: http://121.40.67.221:8040/eureka/
   instance:
     prefer-ip-address: true

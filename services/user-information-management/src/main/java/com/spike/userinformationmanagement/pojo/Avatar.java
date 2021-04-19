@@ -1,7 +1,5 @@
 package com.spike.userinformationmanagement.pojo;
 
-import sun.misc.BASE64Encoder;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

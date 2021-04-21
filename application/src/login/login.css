@@ -1,0 +1,28 @@
+.login-content{
+    width: 100%;
+    margin-top: 64px;
+    background-color: #364d79;
+}
+
+#card{
+    background-color: #fff;
+    width: 450px;
+    margin: 150px auto;
+    padding: 80px 30px;
+    border-radius: 15px;
+}
+
+#select{
+    font-size: 18px;
+    border-bottom: 2px solid #edf0f5;
+}
+
+#login{
+    margin-right: 20px;
+    cursor: pointer;
+    border-bottom: 3px solid #364d79;
+}
+
+#register{
+    cursor: pointer;
+}

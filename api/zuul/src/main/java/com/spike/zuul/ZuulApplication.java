@@ -12,10 +12,10 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ZuulApplication {
 
-    @Bean
-    PreRequestAuthFilter preRequestFilter(){
-        return new PreRequestAuthFilter();
-    }
+//    @Bean
+//    PreRequestAuthFilter preRequestFilter(){
+//        return new PreRequestAuthFilter();
+//    }
 
     public static void main(String[] args) {
         SpringApplication.run(ZuulApplication.class, args);

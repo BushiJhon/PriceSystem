@@ -7,17 +7,17 @@ eureka:
   client:
     service-url:
       defaultZone: http://121.40.67.221:8040/eureka
-zuul:
-  routes:
-    user-authentication:
-      service-id: user-authentication
-      path: /authentication/**
-    user-information-management:
-      service-id: user-information-management
-      path: /information/**
-    post-write:
-      service-id: post-write
-      path: /publish/**
-    post-comment:
-      service-id: post-comment
-      path: /comment/**
+#zuul:
+#  routes:
+#    user-authentication:
+#      service-id: user-authentication
+#      path: /authentication/**
+#    user-information-management:
+#      service-id: user-information-management
+#      path: /information/**
+#    post-write:
+#      service-id: post-write
+#      path: /publish/**
+#    post-comment:
+#      service-id: post-comment
+#      path: /comment/**

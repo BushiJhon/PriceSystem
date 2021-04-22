@@ -21,7 +21,7 @@ public class RecommendController {
     @RequestMapping(value = "/post/recommend", produces = "application/json", method = RequestMethod.GET)
     public List<Post> recommendPost(@RequestParam("page") Integer page){
         List<Post> list = null;
-        list = recommendMapper.selectRecommendPosts(page);
+        list = recommendMapper.selectRecommendPosts(page*5);
         return list;
     }
 //    @RequestMapping(value = "/post/recommend", produces = "application/json", method = RequestMethod.GET)

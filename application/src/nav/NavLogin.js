@@ -32,7 +32,7 @@ class NavLogin extends Component{
         switch(event.key){
             case "1": console.log(event);break;
             case "2": window.location.href = "set";break;
-            case "3": console.log(event);break;
+            case "3": {window.localStorage.removeItem("token"); window.location.href='/'; break;}
         }
     }
 

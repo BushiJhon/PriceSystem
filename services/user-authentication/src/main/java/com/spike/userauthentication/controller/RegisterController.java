@@ -29,7 +29,7 @@ public class RegisterController {
     //用户注册
     @RequestMapping(value = "/user/register", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
     public ReturnInfo registerUser(@RequestBody User user){
-        List<User> findUsers = registerMapper.findUser(user.getNickname(), user.getMobile());
+        List<User> findUsers = registerMapper.findUsers(user.getNickname(), user.getMobile());
 
         if(isUserExist(findUsers)){
 
@@ -45,8 +45,8 @@ public class RegisterController {
 
         try{
             this.registerMapper.insertUser(user.getNickname(), user.getPassword(), user.getMobile());
-            Integer uid = registerMapper.findUid(user.getMobile());
-            return new ReturnInfo(Message.REGISTERSUCCESS, token.createToken(uid));
+            User findUser = registerMapper.findUser(user.getMobile());
+            return new ReturnInfo(Message.REGISTERSUCCESS, token.createToken(findUser));
         }catch (UnsupportedEncodingException exception){
             return new ReturnInfo(Message.REGISTERFAILED, Message.NONETOKEN);
         }

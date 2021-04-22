@@ -19,12 +19,18 @@ public class RecommendController {
     private RecommendMapper recommendMapper;
 
     @RequestMapping(value = "/post/recommend", produces = "application/json", method = RequestMethod.GET)
-    public List<Post> recommendPost(@RequestHeader(value = "ps-token") String token){
-        Integer uid = Token.getUid(token);
-        User user = userMapper.retrieveUser(uid);
-        List<Post> list = recommendMapper.selectPosts(user.getIndustry());
+    public List<Post> recommendPost(@RequestParam("page") Integer page){
+        List<Post> list = null;
+        list = recommendMapper.selectRecommendPosts(page);
         return list;
     }
+//    @RequestMapping(value = "/post/recommend", produces = "application/json", method = RequestMethod.GET)
+//    public List<Post> recommendPost(@RequestHeader(value = "ps-token") String token){
+//        Integer uid = Token.getUid(token);
+//        User user = userMapper.retrieveUser(uid);
+//        List<Post> list = recommendMapper.selectPosts(user.getIndustry());
+//        return list;
+//    }
 
     @RequestMapping(value = "/post/show", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
     public Post showPost(@RequestHeader(value = "ps-token") String token, @RequestBody Post post){

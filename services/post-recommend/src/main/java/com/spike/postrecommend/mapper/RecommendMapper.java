@@ -11,6 +11,10 @@ import java.util.List;
 @Mapper
 public interface RecommendMapper {
 
+    @Select("select * from post order by issueDate limit #{page}, 5")
+    List<Post> selectRecommendPosts(Integer page);
+
+
     @Select("select * from post where industry = #{industry}")
     List<Post> selectPosts(String industry);
 

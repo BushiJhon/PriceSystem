@@ -11,7 +11,7 @@ import java.util.List;
 @Mapper
 public interface RecommendMapper {
 
-    @Select("select * from post order by issueDate limit #{page}, 5")
+    @Select("select * from post order by issueDate desc limit #{page}, 5")
     List<Post> selectRecommendPosts(Integer page);
 
 

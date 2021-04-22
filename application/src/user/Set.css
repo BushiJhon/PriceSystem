@@ -9,3 +9,31 @@
     margin: 0 auto;
     padding: 80px 50px;
 }
+
+.user-content{
+    width: 100%;
+    margin-top: 64px;
+    background-color: white;
+}
+
+.user-background{
+    background: #364d79;
+    margin-bottom: 20px;
+}
+
+.user{
+    height: 160px;
+    width: 960px;
+    margin: 0 auto;
+}
+
+.posts{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.select{
+    font-size: 18px;
+    margin-right: 10px;
+    font-weight: bold;
+}

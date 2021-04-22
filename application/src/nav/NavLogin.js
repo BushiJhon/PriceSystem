@@ -17,6 +17,7 @@ class NavLogin extends Component{
 
         this.postWrite = this.postWrite.bind(this);
         this.home = this.home.bind(this);
+        this.menuLink = this.menuLink.bind(this);
     }
 
     home(){
@@ -27,10 +28,19 @@ class NavLogin extends Component{
         window.location.href = "write";
     }
 
+    menuLink(event){
+        switch(event.key){
+            case "1": console.log(event);break;
+            case "2": window.location.href = "set";break;
+            case "3": console.log(event);break;
+        }
+    }
+
     render(){
         const username = this.state.user.username;
+        const menuLink = this.menuLink;
         const menu = (
-            <Menu>
+            <Menu onClick={menuLink}>
               <Menu.Item key="1" icon={<img src="./image-1.png"></img>}>{username}</Menu.Item>
               <Menu.Item key="2" icon={<img src="./个人设置.png"></img>}>个人设置</Menu.Item>
               <Menu.Item key="3" icon={<img src="./退出登录.png"></img>}>退出</Menu.Item>

@@ -14,16 +14,22 @@ class NavWrite extends Component{
         }
 
         this.home = this.home.bind(this);
+        this.userSet = this.userSet.bind(this);
     }
 
     home(){
         window.location.href = "/";
     }
 
+    userSet(){
+        window.location.href = "set";
+    }
+
     render(){
+        const userSet = this.userSet.bind(this);
         const username = this.state.user.username;
         const menu = (
-            <Menu>
+            <Menu onClick={(e)=>{console.log(e)}}>
               <Menu.Item key="1" icon={<img src="./image-1.png"></img>}>{username}</Menu.Item>
               <Menu.Item key="2" icon={<img src="./个人设置.png"></img>}>个人设置</Menu.Item>
               <Menu.Item key="3" icon={<img src="./退出登录.png"></img>}>退出</Menu.Item>

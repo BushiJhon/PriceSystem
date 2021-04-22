@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Layout, Carousel} from 'antd';
+import {Layout, Carousel, Button} from 'antd';
 import LoginNav from '../nav/NavLogin';
 import Nav from '../nav/Nav';
 import Post from './Post';
@@ -27,6 +27,10 @@ class Home extends Component{
         }
 
         this.change = this.change.bind(this);
+    }
+
+    componentDidMount(){
+        
     }
 
     change(){
@@ -67,7 +71,7 @@ class Home extends Component{
                     <div className={"posts"}>
                         {this.state.listItems}
                     </div>
-                    <div><button onClick={this.change}>gengx</button></div>
+                    <div style={{textAlign: 'center', margin: '15px 0'}}><Button onClick={this.change}>更多</Button></div>
                 </div>
             </Layout>
         );

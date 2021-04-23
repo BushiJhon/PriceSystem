@@ -18,7 +18,7 @@ class Post extends Component{
         const pid = this.state.pid;
         const title = this.state.title;
         const content = this.state.content;
-        const time = this.state.time;
+        const time = (new Date(this.state.time)).toLocaleDateString();
 
         return(
             <Link to={{pathname: "show", state:{id: pid}}}>

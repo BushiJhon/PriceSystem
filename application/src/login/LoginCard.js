@@ -46,6 +46,8 @@ class LoginCard extends Component{
             }
         ).then((res)=>{
             const token = res.data.token;
+            const nickname = res.data.nickname;
+            window.localStorage.setItem("nickname", nickname);
             window.localStorage.setItem("token", token);
             window.location.href = '/';
         })

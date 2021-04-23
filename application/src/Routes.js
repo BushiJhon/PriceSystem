@@ -17,6 +17,7 @@ import Login from './login/Login';
 import Write from './post/Write';
 import Set from './user/Set';
 import Index from './user/Index';
+import Show from './post/Show';
 
 const history = browserHistory;
 const Routes = () => (
@@ -27,6 +28,7 @@ const Routes = () => (
             <Route path={"write"} component={Write}/>
             <Route path={"set"} component={Set}/>
             <Route path={"index"} component={Index}></Route>
+            <Route path={"show"} component={Show}></Route>
             {/* <Route path={"register"} component={Register}/>
             <Route path={"complete"} component={Complete}/>
             <Route path={"modify"} component={Modify}/>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Nav from '../nav/Nav';
+import Footer from '../footer/NewFooter';
 import './login.css';
 import {Layout} from 'antd';
 
@@ -43,6 +44,7 @@ class Login extends Component{
                         </div>
                     </div>
                 </div>
+                <Footer/>
             </Layout>
         );
     }

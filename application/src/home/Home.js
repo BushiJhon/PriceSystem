@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Layout, Carousel, Button} from 'antd';
 import LoginNav from '../nav/NavLogin';
 import Nav from '../nav/Nav';
+import Footer from '../footer/NewFooter';
 import Post from './Post';
 import './Home.css';
 import axios from 'axios';
@@ -33,11 +34,9 @@ class Home extends Component{
             }
             ).then((res)=>{
                 const posts = that.state.posts;
-                console.log(posts)
                 posts.push(...res.data);
                 that.setState({posts: posts});
                 that.setState({page: page+1});
-                console.log(posts);                
             })
     }
 
@@ -53,7 +52,7 @@ class Home extends Component{
     render(){
         const nav = this.state.isLogin ? <LoginNav/> : <Nav/>;
         const listItems = this.state.posts.map((posts) =>
-        <Post title={posts.title} content={posts.content} time={posts.issueDate}/>
+        <Post title={posts.title} content={posts.content} time={posts.issueDate} pid={posts.pid}/>
         );
         const more = this.getPost;
         return(
@@ -78,6 +77,7 @@ class Home extends Component{
                     </div>
                     <div style={{textAlign: 'center', margin: '15px 0'}}><Button onClick={more}>更多</Button></div>
                 </div>
+                <Footer></Footer>
             </Layout>
         );
     }

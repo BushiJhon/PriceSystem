@@ -10,7 +10,7 @@ class NavLogin extends Component{
 
         this.state = {
             user:{
-                username: '昵称昵称昵称昵称昵称昵称昵称',
+                username: window.localStorage.getItem("nickname"),
                 avatar: ''
             }
         }
@@ -19,6 +19,8 @@ class NavLogin extends Component{
         this.home = this.home.bind(this);
         this.menuLink = this.menuLink.bind(this);
     }
+
+    
 
     home(){
         window.location.href = "/";
@@ -30,7 +32,7 @@ class NavLogin extends Component{
 
     menuLink(event){
         switch(event.key){
-            case "1": console.log(event);break;
+            case "1": window.location.href = "index";break;
             case "2": window.location.href = "set";break;
             case "3": {window.localStorage.removeItem("token"); window.location.href='/'; break;}
         }
@@ -52,7 +54,7 @@ class NavLogin extends Component{
             <div className={"nav"}>
                 <div className={"nav-content"}>
                     <div className={"home"} onClick={home}><img className={"image"} src="./首页.png"/>首页</div>
-                    <div className={"search"}><Search style={{marginTop: '16px'}}></Search></div>
+                    <div className={"search"}><Search style={{marginTop: '16px'}} placeholder={'请输入搜索用户、帖子标题'}></Search></div>
                     <div className={"login-register"} onClick={postWrite}><img className={"image"} src="./申请.png"/>发帖</div>
                     <div id={"user"} style={{float: 'right'}}>
                     <Dropdown overlay={menu}>

@@ -8,7 +8,7 @@ class NavWrite extends Component{
 
         this.state = {
             user:{
-                username: '昵称昵称昵称昵称昵称昵称昵称',
+                username: window.localStorage.getItem("nickname"),
                 avatar: ''
             }
         }
@@ -23,7 +23,7 @@ class NavWrite extends Component{
 
     menuLink(event){
         switch(event.key){
-            case "1": console.log(event);break;
+            case "1": window.location.href = "index";break;
             case "2": window.location.href = "set";break;
             case "3": {window.localStorage.removeItem("token"); window.location.href='/'; break;}
         }

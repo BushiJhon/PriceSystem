@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from 'react-router';
 import './Home.css';
 
 class Post extends Component{
@@ -8,25 +9,29 @@ class Post extends Component{
         this.state = {
             title: this.props.title,
             content: this.props.content,
-            time: this.props.time
+            time: this.props.time,
+            pid: this.props.pid
         }
+
     }
-
     render(){
-
+        const pid = this.state.pid;
         const title = this.state.title;
         const content = this.state.content;
         const time = this.state.time;
+
         return(
-            <div className={"post"}>
-                <a className={"post-link"}>
-                    <h3>{title}</h3>
-                    <p>{content}</p>
-                    <div>
-                        <span>{time}</span>
-                    </div>
-                </a>    
-            </div>
+            <Link to={{pathname: "show", state:{id: pid}}}>
+                <div className={"post"}>
+                    <a className={"post-link"}>
+                        <h3>{title}</h3>
+                        <p>{content}</p>
+                        <div>
+                            <span>{time}</span>
+                        </div>
+                    </a>    
+                </div>
+            </Link>
         );
     }
 }

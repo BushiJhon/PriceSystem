@@ -12,9 +12,9 @@ public class PostSearch {
     @Autowired
     private PostMapper postMapper;
 
-    @RequestMapping(value = "/post/search", consumes = "application/json", produces = "application/json", method = RequestMethod.POST)
-    public List<Post> searchPost(@RequestHeader(value = "ps-token") String token, @RequestBody Post post){
-        List<Post> list = postMapper.findPosts(post.getTitle());
+    @RequestMapping(value = "/post/search", produces = "application/json", method = RequestMethod.GET)
+    public List<Post> searchPost(@RequestParam("value") String value){
+        List<Post> list = postMapper.findPosts(value);
         return list;
     }
 

@@ -46,7 +46,7 @@ public class RegisterController {
         try{
             this.registerMapper.insertUser(user.getNickname(), user.getPassword(), user.getMobile());
             User findUser = registerMapper.findUser(user.getMobile());
-            return new ReturnInfo(Message.REGISTERSUCCESS, token.createToken(findUser));
+            return new ReturnInfo(Message.REGISTERSUCCESS, token.createToken(findUser), findUser.getNickname());
         }catch (UnsupportedEncodingException exception){
             return new ReturnInfo(Message.REGISTERFAILED, Message.NONETOKEN);
         }

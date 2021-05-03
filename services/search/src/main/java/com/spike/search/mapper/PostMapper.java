@@ -10,6 +10,6 @@ import java.util.List;
 @Component
 @Mapper
 public interface PostMapper {
-    @Select("select * from post where title = %#{title}%")
+    @Select("select * from post where title like #{title}")
     List<Post> findPosts(String title);
 }

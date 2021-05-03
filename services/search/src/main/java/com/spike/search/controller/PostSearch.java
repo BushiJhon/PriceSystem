@@ -14,7 +14,7 @@ public class PostSearch {
 
     @RequestMapping(value = "/post/search", produces = "application/json", method = RequestMethod.GET)
     public List<Post> searchPost(@RequestParam("value") String value){
-        List<Post> list = postMapper.findPosts(value);
+        List<Post> list = postMapper.findPosts("%" + value + "%");
         return list;
     }
 

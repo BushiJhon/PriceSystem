@@ -3,10 +3,17 @@ package com.spike.userauthentication.controller;
 public class ReturnInfo {
     private String message;
     private String token;
+    private String nickname;
 
-    public ReturnInfo(String message, String token) {
+    public ReturnInfo(String message, String token, String nickname) {
         this.message = message;
         this.token = token;
+	this.nickname = nickname;
+    }
+
+    public ReturnInfo(String message, String token){
+    	this.message = message;
+	this.token = token;
     }
 
 
@@ -18,12 +25,20 @@ public class ReturnInfo {
         this.token = token;
     }
 
+    public void setNickname(String nickname){
+    	this.nickname = nickname;
+    }
+
     public String getMessage() {
         return message;
     }
 
     public String getToken() {
         return token;
+    }
+
+    public String getNickname(){
+    	return nickname;
     }
 }
 

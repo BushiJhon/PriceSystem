@@ -1,15 +1,16 @@
-.content{
+.home-content{
     width: 100%;
     margin-top: 64px;
     background-color: white;
 }
 
-.posts{
+.home-posts{
+    min-height: 680px;
     width: 960px;
     margin: 0 auto;
 }
 
-.background{
+.home-background{
     background-color: #e4f4ff;
     margin-bottom: 20px;
 }
@@ -24,7 +25,6 @@
     padding: 15px 0;
     border-bottom: 1px solid #edf0f5;
     font-size: 17px;
-    
 }
 
 a:link {color: #909499}
@@ -32,10 +32,6 @@ a:visited {color: #909499}
 a:hover {color: #364d79}
 a:active {color: #909499}
 a {color: #909499}
-
-post-link{
-    color: #909499;
-}
 
 #content-1{
     height: 160px;

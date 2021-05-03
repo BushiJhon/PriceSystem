@@ -7,6 +7,7 @@ class Post extends Component{
         super(props);
 
         this.state = {
+            key: this.props.pid,
             title: this.props.title,
             content: this.props.content,
             time: this.props.time,

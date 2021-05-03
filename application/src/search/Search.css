@@ -1,12 +1,11 @@
-.content{
+.search-content{
     width: 100%;
     margin-top: 64px;
     background-color: white;
 }
 
-.posts{
+.search-posts{
+    min-height: 680px;
     width: 960px;
-    padding: 15px 0;
-    border-bottom: 1px solid #edf0f5;
-    font-size: 17px;
+    margin: 0 auto;
 }

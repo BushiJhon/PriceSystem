@@ -51,15 +51,15 @@ class Home extends Component{
 
     render(){
         const nav = this.state.isLogin ? <LoginNav/> : <Nav/>;
-        const listItems = this.state.posts.map((posts) =>
-        <Post title={posts.title} content={posts.content} time={posts.issueDate} pid={posts.pid}/>
+        const listItems = this.state.posts.map((post) =>
+        <Post title={post.title} content={post.content} time={post.issueDate} pid={post.pid} key={post.pid}/>
         );
         const more = this.getPost;
         return(
             <Layout>
                 {nav}
-                <div className={"content"}>
-                    <div className={"background"}>
+                <div className={"home-content"}>
+                    <div className={"home-background"}>
                         <Carousel autoplay>
                             <div>
                                 <h1 id={"content-1"}>基于微服务架构的价格系统</h1>
@@ -72,7 +72,7 @@ class Home extends Component{
                             </div>
                         </Carousel>
                     </div>
-                    <div className={"posts"}>
+                    <div className={"home-posts"}>
                         {listItems}
                     </div>
                     <div style={{textAlign: 'center', margin: '15px 0'}}><Button onClick={more}>更多</Button></div>

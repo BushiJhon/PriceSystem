@@ -27,7 +27,8 @@
     margin: 0 auto;
 }
 
-.posts{
+.user-posts{
+    min-height: 680px;
     width: 960px;
     margin: 0 auto;
 }

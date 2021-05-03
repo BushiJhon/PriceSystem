@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Nav from '../nav/NavLogin';
 import Footer from '../footer/NewFooter';
-import './Write.css';
+import './Post.css';
 import {Layout} from 'antd';
 import axios from 'axios';
 
@@ -55,7 +55,7 @@ class Show extends Component{
             <Layout>
                 <Nav/>
                 <div className={"write-content"}>
-                    <div className={"posts"}>
+                    <div className={"post-posts"}>
                         <div id={"show-content"}>
                             <div style={{fontSize: '30px', fontWeight: 'bold', margin: '20px 0', minHeight: '100px'}}>{title}</div>
                             <div style={{fontSize: '20px', margin: '20px 0', minHeight: '680px'}}>{content}</div>

@@ -47,14 +47,14 @@ class Search extends Component{
 
     render(){
         const nav = this.state.isLogin? <NavLogin/>:<Nav/>;
-        const listItems = this.state.posts.map((posts) =>
-        <Post title={posts.title} content={posts.content} time={posts.issueDate} pid={posts.pid}/>
+        const listItems = this.state.posts.map((post) =>
+        <Post title={post.title} content={post.content} time={post.issueDate} pid={post.pid} key={post.pid}/>
         );
         return(
             <Layout>
                 {nav}
-                <div className={"content"}>
-                    <div className={"posts"}>
+                <div className={"search-content"}>
+                    <div className={"search-posts"}>
                         {listItems}
                     </div>
                 </div>

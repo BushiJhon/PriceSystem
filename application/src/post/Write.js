@@ -3,7 +3,7 @@ import Nav from '../nav/NavWrite';
 import Footer from '../footer/NewFooter';
 import {Layout, Input, Select, Button} from 'antd';
 import axios from 'axios';
-import './Write.css';
+import './Post.css';
 
 const {TextArea} = Input;
 const {Option} = Select;
@@ -92,7 +92,7 @@ class Write extends Component{
             <Layout>
                 <Nav/>
                 <div className={"write-content"}>
-                    <div className={"posts"}>
+                    <div className={"post-posts"}>
                         <div id={"panel"}>
                             <div className={"input"}>
                                 <span>地区:&emsp;</span>
@@ -115,10 +115,8 @@ class Write extends Component{
                                 <Input style={{width: '240px'}} type={"text"} onChange={setIndustry}></Input>
                             </div>
                             <div>
-                                <TextArea bordered={false} placeholder={"请输入标题"} autoSize={{ minRows: 3, maxRows: 8 }} style={{fontSize: '28px', borderBottom: '3px solid #edf0f5'}} placeholder={"请输入行业"} onChange={setTitle}></TextArea>                                
+                                <TextArea bordered={false} placeholder={"请输入标题"} autoSize={{ minRows: 3, maxRows: 8 }} style={{fontSize: '28px', borderBottom: '3px solid #edf0f5'}} onChange={setTitle}></TextArea>                                
                             </div>
-                            {/* <div id={"space"}>
-                            </div> */}
                             <div>
                                 <TextArea bordered={false} placeholder={"请输入正文"} autoSize={{ minRows: 15, maxRows: 50 }} style={{ fontSize: '20px'}} onChange={setContent}></TextArea>
                             </div>

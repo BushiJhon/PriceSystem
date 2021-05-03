@@ -4,10 +4,6 @@ import {Layout} from 'antd';
 const {Footer} = Layout;
 
 class NewFooter extends Component{
-    constructor(props){
-        super(props);
-    }
-
     render(){
         return(
             <Footer style={{backgroundColor: '#f9f9f9'}}>

@@ -48,7 +48,7 @@ class Show extends Component{
     render(){
         const title = this.state.title;
         const content = this.state.content;
-        const issueDate = this.state.issueDate;
+        const issueDate = new Date(this.state.issueDate).toLocaleDateString();
         const province = this.state.province;
         const city = this.state.city;
         return(

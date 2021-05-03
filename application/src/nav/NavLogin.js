@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Input, Dropdown, Menu} from 'antd';
+import {browserHistory} from 'react-router';
 import './Nav.css';
 
 const {Search} = Input;
@@ -18,12 +19,18 @@ class NavLogin extends Component{
         this.postWrite = this.postWrite.bind(this);
         this.home = this.home.bind(this);
         this.menuLink = this.menuLink.bind(this);
+        this.search = this.search.bind(this);
     }
 
     
 
     home(){
         window.location.href = "/";
+    }
+
+    search(value, event){
+        const history = browserHistory;
+        history.push({pathname:"search",query: {value : value}});
     }
 
     postWrite(){
@@ -50,11 +57,12 @@ class NavLogin extends Component{
           );
         const postWrite = this.postWrite;
         const home = this.home;
+        const search = this.search;
         return(
             <div className={"nav"}>
                 <div className={"nav-content"}>
                     <div className={"home"} onClick={home}><img className={"image"} src="./首页.png"/>首页</div>
-                    <div className={"search"}><Search style={{marginTop: '16px'}} placeholder={'请输入搜索用户、帖子标题'}></Search></div>
+                    <div className={"search"}><Search style={{marginTop: '16px'}} placeholder={'请输入搜索用户、帖子标题'} onSearch={search}></Search></div>
                     <div className={"login-register"} onClick={postWrite}><img className={"image"} src="./申请.png"/>发帖</div>
                     <div id={"user"} style={{float: 'right'}}>
                     <Dropdown overlay={menu}>

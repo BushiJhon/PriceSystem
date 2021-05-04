@@ -46,4 +46,10 @@ public class LoginController {
 
         return new ReturnInfo(Message.LOGINFAILED, Message.NONETOKEN);
     }
+
+    @RequestMapping(value = "/mobile", produces = "application/json", method = RequestMethod.GET)
+    public String getMobile(@RequestHeader("ps-token") String token){
+        Integer uid = Token.getUid(token);
+        return loginMapper.selectMobile(uid);
+    }
 }

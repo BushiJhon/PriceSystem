@@ -14,4 +14,7 @@ public interface LoginMapper {
 
     @Select("select * from certification where mobile = #{mobile} and password = #{password}")
     User selectByMobile(String mobile, String password);
+
+    @Select("select mobile from certification where uid = #{uid}")
+    String selectMobile(Integer uid);
 }

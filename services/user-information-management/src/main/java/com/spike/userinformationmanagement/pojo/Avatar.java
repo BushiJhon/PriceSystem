@@ -29,10 +29,10 @@ public class Avatar {
     public Boolean saveAvatar(Integer id) {
         StringBuffer avatarFileName = new StringBuffer("avatars/");
         avatarFileName.append(id);
-        avatarFileName.append(".jpg");
+        avatarFileName.append(".png");
         File avatarFile = new File(avatarFileName.toString());
         try {
-            this.avatar = Base64.getDecoder().decode(this.avatarBase64);
+            this.avatar = Base64.getDecoder().decode(this.avatarBase64.replace("data:image/png;base64,", ""));
             FileOutputStream fileOutputStream = new FileOutputStream(avatarFile);
             fileOutputStream.write(avatar);
             fileOutputStream.flush();
@@ -47,7 +47,7 @@ public class Avatar {
     public Boolean findAvatar(Integer id){
         StringBuffer avatarFileName = new StringBuffer("avatars/");
         avatarFileName.append(id);
-        avatarFileName.append(".jpg");
+        avatarFileName.append(".png");
         File avatarFile = new File(avatarFileName.toString());
         try{
             FileInputStream fileInputStream = new FileInputStream(avatarFile);
@@ -55,7 +55,7 @@ public class Avatar {
             fileInputStream.read(avatar);
             fileInputStream.close();
 
-            avatarBase64 = Base64.getEncoder().encodeToString(avatar);
+            avatarBase64 = "data:image/png;base64," + Base64.getEncoder().encodeToString(avatar);
         }catch (IOException e){
             return false;
         }

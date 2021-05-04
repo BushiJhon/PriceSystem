@@ -19,11 +19,13 @@ class Information extends Component{
             selectProvince: provinces[0],
             selectCity: cities[provinces[0]][0],
             selectCities: cities[provinces[0]], 
-            mobile: '13888389311',
+            mobile: '',
             nickname: window.localStorage.getItem("nickname"),
             company: '',
             industry: '',
-            introduction: ''
+            introduction: '',
+
+            isComplete: true
         }
 
         this.handleProvince = this.handleProvince.bind(this);
@@ -42,12 +44,26 @@ class Information extends Component{
                 'ps-token': window.localStorage.getItem("token")
             }
         }).then((res)=>{
-            this.setState({company: res.data.company});
-            this.setState({industry: res.data.industry});
-            this.setState({introduction: res.data.introduction});
-            this.setState({selectProvince: res.data.province});
-            this.setState({selectCity: res.data.city});
-            this.setState({selectCities: cities[res.data.province]});
+            if(res.data.length !== 0){
+                this.setState({company: res.data.company});
+                this.setState({industry: res.data.industry});
+                this.setState({introduction: res.data.introduction});
+                this.setState({selectProvince: res.data.province});
+                this.setState({selectCity: res.data.city});
+                this.setState({selectCities: cities[res.data.province]});
+            }else{
+                this.setState({isComplete: false})
+            }
+        })
+
+        axios({
+            method: 'GET',
+            url: 'api/user-authentication/mobile',
+            headers: {
+                'ps-token': window.localStorage.getItem("token")
+            }
+        }).then((res)=>{
+            this.setState({mobile: res.data});
         })
     }
 
@@ -74,9 +90,16 @@ class Information extends Component{
     }
 
     modify(){
+        let url;
+        if(this.state.isComplete){
+            url = '/api/user-information-management/user/modify';
+        }else{
+            url = '/api/user-information-management/user/complete'
+        }
+
         axios({
             method: 'POST',
-            url: '/api/user-information-management/user/modify',
+            url: url,
             data: {
                 "province": this.state.selectProvince,
                 "city": this.state.selectCity,

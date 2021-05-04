@@ -7,7 +7,14 @@ module.exports = function(app) {
         changeOrigin: true,
         pathRewrite: {
         "^/api": ''
-    },
-    // cookieDomainRewrite: "http://localhost:3000"
-}));
+        },
+    }));
+    app.use(createProxyMiddleware('/local', {
+        target: 'http://localhost:8010' ,
+        secure: false,
+        changeOrigin: true,
+        pathRewrite: {
+        "^/local": ''
+        },
+    }));
 };

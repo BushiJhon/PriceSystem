@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Input, Button} from 'antd';
+import {Input} from 'antd';
 import {browserHistory} from 'react-router';
 import './Nav.css';
 
@@ -34,9 +34,9 @@ class Nav extends Component{
         return(
             <div className={"nav"}>
                 <div className={"nav-content"}>
-                    <div className={"home"} onClick={home}><img className={"image"} src="./首页.png"/>首页</div>
+                    <div className={"home"} onClick={home}><img alt="首页" className={"image"} src="./首页.png"/>首页</div>
                     <div className={"search"}><Search style={{marginTop: '16px'}} placeholder={'请输入搜索用户、帖子标题'} onSearch={search}></Search></div>
-                    <div className={"login-register"} onClick={loginAndRegister}><img className={"image"} src="./展开.png"></img>登录/注册</div>
+                    <div className={"login-register"} onClick={loginAndRegister}><img alt="登录" className={"image"} src="./展开.png"></img>登录/注册</div>
                 </div>
             </div>
         );

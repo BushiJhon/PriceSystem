@@ -47,6 +47,7 @@ class RegisterCard extends Component{
         ).then((res)=>{
             const token = res.data.token;
             window.localStorage.setItem("token", token);
+            window.localStorage.setItem("nickname", this.state.nickname);
             window.location.href = '/';
 
         })

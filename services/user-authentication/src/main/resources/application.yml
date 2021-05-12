@@ -6,7 +6,7 @@ spring:
   datasource:
     url: jdbc:mysql://121.40.67.221:3306/priceCommunicationSystem?characterEncoding=UTF-8
     username: root
-    password: root
+    password: 1214067221Mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
 eureka:
   client:

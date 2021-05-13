@@ -14,3 +14,8 @@ eureka:
       defaultZone: http://121.40.67.221:8040/eureka/
 server:
   port: 8010
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

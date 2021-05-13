@@ -11,5 +11,5 @@ server:
   port: 8030
 hystrix:
   dashboard:
-    proxy-stream-allow-list: "*"
+    proxy-stream-allow-list: '121.40.67.221'
 

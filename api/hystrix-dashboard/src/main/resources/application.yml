@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: hystrix-dashboard
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://121.40.67.221:8040/eureka/
+server:
+  port: 8030
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "*"
+
